@@ -36,10 +36,18 @@
 
         <script>
             document.addEventListener("deviceready", onDeviceReady, false);
-   
             
             function onDeviceReady() {
-                $("#hello").append("hello");   
+                $("#hello").append("hello"); 
+                
+                
+                $.getJSON( "http://greenseedmusic.com/eatr1.php", function( data ) {
+                    $.each( data, function( key, val ) {
+                     $("#hello").append(key + val);
+                    });
+                });
+            
+                
             }
 
         </script>
